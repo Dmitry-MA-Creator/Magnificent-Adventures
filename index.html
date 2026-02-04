@@ -286,25 +286,7 @@
     </div>
   </section>
 
-  <script>
-    let currentSlide = 0;
-    const slides = document.getElementById("slides");
-    const totalSlides = slides.children.length;
-
-    function updateSlide() {
-      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateSlide();
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateSlide();
-    }
-  </script>
+  
 
 </body>
 </html>
