@@ -24,14 +24,25 @@
 
     /* ===== HERO SECTION ===== */
     .hero {
-      min-height: 100vh;
-      background-image: url("images/forest-bg-opt.jpg"); /* для всех */
-      background-image: url("images/forest-bg-opt.webp"); /* для современных браузеров */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-    }
+  position: relative;
+  min-height: 100vh;
+  height: 100vh; /* Фиксируем высоту ровно на экран */
+  max-height: 100vh; /* Не больше экрана */
+  
+  /* Фон с параллаксом */
+  background-image: url("images/forest-bg-opt.jpg");
+  background-image: url("images/forest-bg-opt.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Эффект параллакса! */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Убираем скролл внутри героя */
+}
 
     /* ===== TOP NAV ===== */
     .nav {
