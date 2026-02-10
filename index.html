@@ -36,7 +36,6 @@
   overflow: hidden;
 }
 
-
     /* ===== TOP NAV ===== */
     .nav {
       display: flex;
@@ -97,27 +96,16 @@
     }
 
     /* ===== SWIPER СТИЛИ ===== */
-/* Контейнер слайдера - ЧЁТКО фиксируем размеры */
+/* Контейнер слайдера */
 .slider-container {
-  position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
-  height: 70vh; /* 70% от высоты экрана */
-  min-height: 500px;
-  max-height: 800px;
-  
-  /* Центрируем */
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+
   margin: 0 auto;
-  
-  /* Розовые линии ДОБАВЛЯЕМ СЕЙЧАС */
-  border-top: 3px solid #ff6b8b;
-  border-bottom: 3px solid #ff6b8b;
-  box-shadow: 
-    0 0 20px rgba(255, 107, 139, 0.5),
-    inset 0 0 30px rgba(255, 107, 139, 0.2);
-  
-  /* Плавная анимация */
-  transition: all 0.3s ease;
 }
 
 /* Сам слайдер внутри контейнера */
