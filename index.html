@@ -179,24 +179,17 @@
 
     
     /* ===== CTA ===== */
-    .cta {
-      margin-top: 30px;
-    }
+    .slider-container {
+  position: relative;
+}
 
-    .cta button {
-      padding: 12px 28px;
-      border-radius: 30px;
-      border: none;
-      background: #ffffff;
-      color: #000000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+.cta {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-    .cta button:hover {
-      background: #eaeaea;
-    }
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
@@ -319,20 +312,19 @@
   <div class="swiper-slide">
     <img src="./images/skeleton-1-1-lawn-e-mower-3-4.jpg" alt="MA Lawn E-Mower 4-8”">
   </div>
-            <!-- CTA -->
-      <div class="cta">
-        <button>Learn More</button>
-      </div>
+           
 </div>
           
           <!-- Кнопки навигации Swiper -->
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
           
-        </div>
+        </div> 
+         <!-- CTA -->
+      <div class="cta">
+        <button>Learn More</button>
       </div>
-
-      
+      </div>
     </div>
   </section>
 
