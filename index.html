@@ -175,14 +175,26 @@
     .swiper-button-prev:after {
       font-size: 24px;
     }
-   .swiper-slide:focus {
-    outline: none !important;
-    }
-
-  .swiper-button-next:focus,
-  .swiper-button-prev:focus {
+   /* Полное отключение фокуса для всех элементов слайдера */
+.swiper-slide:focus,
+.swiper-slide:focus-visible,
+.swiper-slide:focus-within,
+.swiper-button-next:focus,
+.swiper-button-prev:focus,
+.swiper-button-next:focus-visible,
+.swiper-button-prev:focus-visible {
   outline: none !important;
-    }
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important; /* для мобильных */
+}
+
+/* Отключаем выделение при клике на всё, что связано со слайдером */
+.swiper * {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
     
     /* ===== CTA ===== */
     .slider-container {
