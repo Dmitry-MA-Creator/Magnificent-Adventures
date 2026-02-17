@@ -346,8 +346,14 @@
       </div>
       </div>
     </div>
-  </section>
-
+  </section> 
+  
+  <!-- Звук электроотвёртки для слайдера -->
+  <audio id="swiper-sound" preload="auto">
+    <source src="./sounds/screwdriver-short.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио
+  </audio> 
+  
   <!-- SWIPER JS (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -378,7 +384,20 @@
   },
   
 });
-
+      // ЗВУК ТУТ!
+      const sound = document.getElementById('swiper-sound');
+      if (sound) {
+        document.querySelector('.swiper-button-next').addEventListener('click', () => {
+          sound.currentTime = 0;
+          sound.play().catch(() => {});
+        });
+        
+        document.querySelector('.swiper-button-prev').addEventListener('click', () => {
+          sound.currentTime = 0;
+          sound.play().catch(() => {});
+        });
+      } 
+      
 console.log('🚀 MA Slider запущен!');
 console.log('Количество слайдов:', swiper.slides.length);
     });
