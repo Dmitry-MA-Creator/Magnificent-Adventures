@@ -361,7 +361,11 @@
   
   loop: false,
   initialSlide: 7,     
-  speed: 600,
+    speed: 150,              // ← 150 мс — то что надо!
+  effect: 'fade',           // ← добавляем fade
+  fadeEffect: {
+    crossFade: true         // ← перекрёстное затухание
+  },
        
   navigation: {
     nextEl: '.swiper-button-next',
