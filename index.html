@@ -26,18 +26,29 @@
     /* ===== HERO SECTION ===== */
   .hero {
   position: relative;
-  min-height: 90vh;
-  background-image: url("images/forest-bg-opt.webp");
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  display: flex;
-  flex-direction: column;
   }
+  /* ===== HERO BACKGROUNDS ===== */
+.hero-1 { background-image: url("images/bg-hero-1.webp"); }
+.hero-2 { background-image: url("images/bg-hero-2.webp"); }
+.hero-3 { background-image: url("images/bg-hero-3.webp"); }
+.hero-4 { background-image: url("images/bg-hero-4.webp"); }
+.hero-5 { background-image: url("images/bg-hero-5.webp"); }
+.hero-6 { background-image: url("images/bg-hero-6.webp"); }
 
     /* ===== TOP NAV ===== */
     .nav {
+      position: fixed;     
+      top: 0;              
+      left: 0;              
+      width: 100%;          
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -254,10 +265,8 @@
 
 <body>
 
-  <section class="hero">
-
-    <!-- Navigation -->
-    <div class="nav">
+  <!-- Navigation -->
+    <header class="nav">
       <div class="logo">Magnificent Adventures</div>
       <div class="menu">
         <a href="#">About</a>
@@ -266,8 +275,12 @@
         <a href="#">Media</a>
         <a href="#">Contacts</a>
       </div>
-    </div>
+    </header>
 
+  <main>
+  
+    <section class="hero hero-1">
+  
     <!-- Hero Content -->
     <div class="hero-content">
 
@@ -408,6 +421,14 @@
         исследовательских платформ. Исследуй, как это возможно
       </div> 
   </section> 
+
+  <section class="hero hero-2"></section>
+  <section class="hero hero-3"></section>
+  <section class="hero hero-4"></section>
+  <section class="hero hero-5"></section>
+  <section class="hero hero-6"></section>
+
+  </main>
   
   <!-- Звук для слайдера -->
   <audio id="swiper-sound" preload="auto">
