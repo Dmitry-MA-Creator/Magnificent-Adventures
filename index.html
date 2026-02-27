@@ -261,10 +261,13 @@
         height: 300px;
       }
     }
-    
-   .hero + .hero {
-   border-top: 3px solid rgba(255,255,255,0.06);
-   } 
+    .hero + .hero::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: rgba(255,255,255,0.06);
+    }
+   
     
   </style>
 </head>
