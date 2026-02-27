@@ -239,6 +239,10 @@
   color: #444;
 }
 
+.hero + .hero {
+border-top: 5px solid rgba(255,255,255,0.06);
+}
+    
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
       .hero-title {
@@ -261,14 +265,7 @@
         height: 300px;
       }
     }
-    .hero + .hero::before {
-    content: "";
-    display: block;
-    height: 25px;
-    background: red);
-    }
-   
-    
+           
   </style>
 </head>
 
