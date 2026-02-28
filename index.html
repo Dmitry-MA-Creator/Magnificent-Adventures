@@ -71,11 +71,19 @@
       font-size: 14px;
       opacity: 0.85;
     }
-
+    .hero-light .menu a {
+  color: #333333;
+   }
     .menu a:hover {
       opacity: 1;
     }
-
+    .nav-dark .menu a {
+  color: #333333;
+}
+.nav-dark .menu a:hover {
+  color: #ec3f77;
+}
+    
     /* ===== HERO CONTENT ===== */
     .hero-content {
    display: flex;
@@ -245,6 +253,14 @@
 border-top: 5px solid #999;
 }
  html { scroll-snap-type: y proximity; }
+
+  .site-footer {
+  background: #1a1a1a;
+  color: #888;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 13px;
+}
     
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
@@ -288,7 +304,7 @@ border-top: 5px solid #999;
 
   <main>
   
-    <section class="hero hero-1">
+    <section class="hero hero-1 hero-dark">
   
     <!-- Hero Content -->
     <div class="hero-content">
@@ -431,12 +447,17 @@ border-top: 5px solid #999;
       </div> 
   </section> 
 
-  <section class="hero hero-2"></section>
-  <section class="hero hero-3"></section>
-  <section class="hero hero-4"></section>
-  <section class="hero hero-5"></section>
-  <section class="hero hero-6"></section>
-  <section class="hero hero-7"></section>
+  <section class="hero hero-2 hero-light"></section>
+  <section class="hero hero-3 hero-dark"></section>
+  <section class="hero hero-4 hero-light"></section>
+  <section class="hero hero-5 hero-light"></section>
+  <section class="hero hero-6 hero-light"></section>
+  <section class="hero hero-7 hero-dark"></section>
+  <footer class="site-footer">
+  © 2026 Magnificent Adventures  
+  Built with ChatGPT & DeepSeek
+</footer>
+    
   </main>
   
   <!-- Звук для слайдера -->
@@ -494,5 +515,24 @@ console.log('Количество слайдов:', swiper.slides.length);
     });
   </script>
 
+  <script>
+const nav = document.querySelector('.nav');
+const heroes = document.querySelectorAll('.hero');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (entry.target.classList.contains('hero-light')) {
+        nav.classList.add('nav-dark');
+      } else {
+        nav.classList.remove('nav-dark');
+      }
+    }
+  });
+}, { threshold: 0.6 });
+
+heroes.forEach(hero => observer.observe(hero));
+</script>
+  
 </body>
 </html>
