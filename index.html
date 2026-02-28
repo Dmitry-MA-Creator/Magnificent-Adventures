@@ -33,7 +33,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  scroll-snap-align: start;
   }
+    
   /* ===== HERO BACKGROUNDS ===== */
 .hero-1 { background-image: url("images/bg-hero-1.webp"); }
 .hero-2 { background-image: url("images/bg-hero-2.webp"); }
@@ -242,6 +244,7 @@
 .hero + .hero {
 border-top: 5px solid #999;
 }
+ html { scroll-snap-type: y mandatory; }
     
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
