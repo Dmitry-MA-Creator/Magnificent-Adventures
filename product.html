@@ -5,8 +5,84 @@
   <title>MA Product</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Подключаем твои общие стили -->
-  <link rel="stylesheet" href="style.css">
+<style>
+
+/* ========================= */
+/* PRODUCT PAGE STRUCTURE   */
+/* ========================= */
+
+.product-page {
+  width: 100%;
+}
+
+/* ----- SCREEN 1 ----- */
+
+.pdp-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 40px;
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.media-column,
+.main-media,
+.info-column {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+/* ----- SCREEN 2 ----- */
+
+.pdp-description {
+  min-height: 100vh;
+  padding: 60px;
+  box-sizing: border-box;
+  border-top: 1px solid #ddd;
+}
+
+.description-block,
+.specs-block,
+.diy-block {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+/* ----- SCREEN 3 ----- */
+
+.pdp-ecosystem {
+  min-height: 50vh;
+  padding: 60px;
+  box-sizing: border-box;
+  border-top: 1px solid #ddd;
+}
+
+.transformations,
+.attachments,
+.parts {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* ----- OVERLAY ----- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+}
+
+.overlay-content {
+  position: absolute;
+  inset: 10%;
+  background: white;
+}
+
+</style>
 </head>
 
 <body>
