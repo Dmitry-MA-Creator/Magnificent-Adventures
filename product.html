@@ -36,25 +36,39 @@
 /* ----- SCREEN 2 ----- */
 
 .pdp-description {
-  min-height: 100vh;
-  padding: 60px;
+  padding: 100px 60px;
   box-sizing: border-box;
   border-top: 1px solid #ddd;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-}
+  grid-template-rows: auto auto auto;
+  gap: 80px;
+} 
 
 .description-block,
 .specs-block,
 .diy-block {
   border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 40px;
-  grid-column: span 2;
+  padding: 40px;
 }
 
+  /* Диагональ */
+.description-block {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.specs-block {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.diy-block {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+  
 /* ----- SCREEN 3 ----- */
 
 .pdp-ecosystem {
