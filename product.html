@@ -26,13 +26,42 @@
   box-sizing: border-box;
 }
 
+ .main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+ .main-image {
+  max-width: 700px;
+} 
+  
+.thumb {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.media-column img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+  
 .media-column,
 .main-media,
 .info-column {
   border: 1px solid #ccc;
   padding: 20px;
 }
-
+.media-column {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+  
 /* ----- SCREEN 2 ----- */
 
 .pdp-description {
@@ -109,7 +138,7 @@
 }
 
 .pdp-container{
-max-width:1200px;
+max-width:1400px;
 margin:0 auto;
 }
 
