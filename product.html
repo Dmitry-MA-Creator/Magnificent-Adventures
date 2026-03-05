@@ -112,6 +112,31 @@
 max-width:1200px;
 margin:0 auto;
 }
+
+ @media (max-width: 900px){
+
+.pdp-description{
+grid-template-columns: 1fr;
+gap:40px;
+}
+
+.description-block,
+.specs-block,
+.diy-video,
+.diy-text{
+grid-column: span 1;
+}
+
+} 
+
+.video-thumb{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  background:#f0f0f0;
+  cursor:pointer;
+}
   
 </style>
 </head>
@@ -130,30 +155,53 @@ margin:0 auto;
     <!-- ========================= -->
     <!-- SCREEN 1 -->
     <!-- ========================= -->
-    <section class="pdp-hero">
+   <section class="pdp-hero">
 
-      <div class="media-column">
-        <div class="thumb">Thumbnail 1</div>
-        <div class="thumb">Thumbnail 2</div>
-        <div class="thumb">Video</div>
+  <div class="pdp-media">
+
+    <div class="media-column">
+
+      <img class="thumb"
+           src="images/product-main.jpg"
+           onclick="changeImage(this)">
+
+      <img class="thumb"
+           src="images/product-side.jpg"
+           onclick="changeImage(this)">
+
+      <img class="thumb"
+           src="images/product-top.jpg"
+           onclick="changeImage(this)">
+
+      <div class="thumb video-thumb">
+           VIDEO
       </div>
 
-      <div class="main-media">
-        MAIN IMAGE AREA
-      </div>
+    </div>
 
-      <div class="info-column">
-        <div class="price-block">
-          $30
-        </div>
+    <div class="main-image">
 
-        <div class="cta-block">
-          <button>Make Order</button>
-        </div>
+      <img id="mainProductImage"
+           src="images/product-main.jpg"
+           alt="MA Product">
 
-      </div>
+    </div>
 
-    </section>
+  </div>
+
+  <div class="info-column">
+
+    <div class="price-block">
+      $30
+    </div>
+
+    <div class="cta-block">
+      <button>Make Order</button>
+    </div>
+
+  </div>
+
+</section>
 
 
     <!-- ========================= -->
@@ -229,5 +277,15 @@ margin:0 auto;
     
 </div>
 
+ <script>
+
+function changeImage(el) {
+
+  document.getElementById("mainProductImage").src = el.src;
+
+}
+
+</script> 
+  
 </body>
 </html>
