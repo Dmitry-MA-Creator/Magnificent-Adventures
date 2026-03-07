@@ -44,8 +44,13 @@
   height: 80px;
   object-fit: cover;
   cursor: pointer;
+  border:1px solid #ddd;
+  transition:all 0.2s ease;
 }
- 
+.thumb.active{
+  border:2px solid #000;
+}
+  
 .media-column,
 .main-image,  
 .info-column {
@@ -193,7 +198,7 @@ grid-column: span 1;
   
     <div class="media-column">
 
-      <img class="thumb"
+      <img class="thumb active"
            src="images/product-main.jpg"
            onclick="changeImage(this)">
 
@@ -310,9 +315,15 @@ grid-column: span 1;
 
  <script>
 
-function changeImage(el) {
+function changeImage(element){
 
-  document.getElementById("mainProductImage").src = el.src;
+document.getElementById("mainProductImage").src = element.src;
+
+document.querySelectorAll(".thumb").forEach(
+thumb => thumb.classList.remove("active")
+);
+
+element.classList.add("active");
 
 }
 
