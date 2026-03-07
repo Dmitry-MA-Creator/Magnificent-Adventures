@@ -70,6 +70,42 @@
   flex-direction: column;
   gap: 40px;
 }
+
+  .info-column{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+ .product-title{
+font-size:28px;
+font-weight:600;
+}
+
+.product-tagline{
+font-size:16px;
+color:#666;
+}
+
+.price-block{
+font-size:32px;
+font-weight:700;
+}
+
+ .cta-block button{
+width:100%;
+padding:14px;
+font-size:16px;
+background:black;
+color:white;
+border:none;
+cursor:pointer;
+transition:all 0.2s ease;
+}
+
+.cta-block button:hover{
+background:#333;
+} 
   
 /* ----- SCREEN 2 ----- */
 
@@ -227,15 +263,23 @@ grid-column: span 1;
   
   <div class="info-column">
 
-    <div class="price-block">
-      $30
-    </div>
-
-    <div class="cta-block">
-      <button>Make Order</button>
-    </div>
-
+  <div class="product-title">
+    MA Scooter Platform
   </div>
+
+  <div class="product-tagline">
+    Modular mobility system
+  </div>
+
+  <div class="price-block">
+    $30
+  </div>
+
+  <div class="cta-block">
+    <button>Make Order</button>
+  </div>
+
+</div>
 
 </section>
 
