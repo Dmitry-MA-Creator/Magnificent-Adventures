@@ -230,9 +230,23 @@ margin:0 auto;
 }
 
 .image-overlay{
-  transition:opacity .25s ease;
+  position:fixed;
+ inset:0;
+ background:rgba(0,0,0,0.9);
+ display:none;
+ align-items:center;
+ justify-content:center;
+ z-index:1000;
+ cursor:zoom-out;
+ transition:opacity .25s ease;
 }
 
+.image-overlay img{
+ max-width:90%;
+ max-height:90%;
+ object-fit:contain;
+}
+  
 .pdp-container{
 max-width:1400px;
 margin:0 auto;
@@ -435,6 +449,19 @@ element.classList.add("active");
 
 }
 
+const mainImage = document.getElementById("mainProductImage");
+const imageOverlay = document.getElementById("imageOverlay");
+const zoomedImage = document.getElementById("zoomedImage");
+
+mainImage.onclick = function(){
+zoomedImage.src = mainImage.src;
+imageOverlay.style.display = "flex";
+}
+
+imageOverlay.onclick = function(){
+imageOverlay.style.display = "none";
+}
+   
 </script> 
   
 </body>
