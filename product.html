@@ -237,7 +237,7 @@ margin:0 auto;
 .image-overlay{
   position:fixed;
  inset:0;
- background:rgba(0,0,0,0.9);
+ background:rgba(0,0,0,0.75);
  display:none;
  align-items:center;
  justify-content:center;
@@ -251,7 +251,28 @@ margin:0 auto;
  max-height:90%;
  object-fit:contain;
 }
-  
+
+.video-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.85);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:1100;
+}
+
+.video-container{
+width:80%;
+max-width:900px;
+aspect-ratio:16/9;
+}
+
+.video-container iframe{
+width:100%;
+height:100%;
+border:0;
+} 
 .pdp-container{
 max-width:1400px;
 margin:0 auto;
@@ -280,6 +301,15 @@ grid-column: span 1;
   font-size:14px;
   background:#f0f0f0;
   cursor:pointer;
+  position:relative;
+  font-size:0;
+}
+
+.video-thumb::after{
+content:"▶";
+position:absolute;
+font-size:28px;
+color:#333;
 }
   
 </style>
@@ -433,7 +463,19 @@ See the section below.
   <img id="zoomedImage" src="" alt="Zoomed product image">
 </div>
 
+<div class="video-overlay" id="videoOverlay">
 
+  <div class="video-container">
+
+    <iframe
+      src="https://www.youtube.com/embed/0rSk-MF2k5M?rel=0"
+      allowfullscreen>
+    </iframe>
+            
+  </div>
+
+</div>
+    
   <footer>
     © 2026 Magnificent Adventures
   </footer>
@@ -465,6 +507,19 @@ imageOverlay.style.display = "flex";
 
 imageOverlay.onclick = function(){
 imageOverlay.style.display = "none";
+}
+
+const videoThumb = document.querySelector(".video-thumb");
+const videoOverlay = document.getElementById("videoOverlay");
+
+videoThumb.onclick = function(){
+videoOverlay.style.display = "flex";
+}
+
+videoOverlay.onclick = function(){
+videoOverlay.style.display="none";
+videoOverlay.querySelector("iframe").src =
+videoOverlay.querySelector("iframe").src;
 }
    
 </script> 
