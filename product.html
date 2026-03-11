@@ -596,17 +596,29 @@ imageOverlay.onclick = function(){
 imageOverlay.style.display = "none";
 }
 
-const videoThumb = document.querySelector(".video-thumb");
 const videoOverlay = document.getElementById("videoOverlay");
+const iframe = videoOverlay.querySelector("iframe");
 
-videoThumb.onclick = function(){
+document.querySelectorAll(".video-thumb").forEach(function(video){
+
+video.onclick = function(){
+
+const videoId = this.dataset.video;
+
+iframe.src = "https://www.youtube.com/embed/" + videoId + "?rel=0";
+
 videoOverlay.style.display = "flex";
+
 }
 
+});
+
 videoOverlay.onclick = function(){
-videoOverlay.style.display="none";
-videoOverlay.querySelector("iframe").src =
-videoOverlay.querySelector("iframe").src;
+
+videoOverlay.style.display = "none";
+
+iframe.src = "";
+
 }
    
 </script> 
