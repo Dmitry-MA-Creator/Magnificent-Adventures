@@ -360,6 +360,22 @@ width:100%;
 height:100%;
 object-fit:cover;
 }
+
+ .video-card{
+width:100%;
+height:240px;
+position:relative;
+overflow:hidden;
+cursor:pointer;
+}
+
+ .video-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+} 
+
   
 </style>
 </head>
@@ -461,17 +477,23 @@ See the section below.
         Technical Specifications
       </div>
 
-     <div class="diy-video">
-       DIY Video
-    </div>
+     <div class="diy-video video-card video-thumb"
+     data-video="1mQpU7FMlYY">
 
-     <div class="diy-video thumb video-thumb">
+     <img
+     src="images/video-assembly-preview.jpg"
+     alt="Assembly video">
 
-      <img
-      src="images/assembly-video-preview.jpg"
-      alt="Assembly video">
+</div>
 
-   </div>
+     <div class="diy-video video-card video-thumb"
+data-video="ZDPYtJw3wic">
+
+  <img
+  src="images/video-diy-preview.jpg"
+  alt="DIY video">
+
+</div>
       
     <div class="diy-text">
       <h3>DIY Version</h3>
