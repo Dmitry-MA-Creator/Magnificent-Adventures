@@ -174,11 +174,14 @@ margin:0 auto;
 
 .description-block,
 .specs-block,
-.diy-video,
 .diy-text {
-  padding: 40px;
-  border: 1px solid #e5e5e5;
-  background:white;
+padding:40px;
+}
+
+.diy-video{
+padding:0;
+display:flex;
+justify-content:center;
 }
 
  /* лёгкие панели */
@@ -332,6 +335,9 @@ opacity:1;
 .video-thumb::after{
 content:"▶";
 position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 font-size:42px;
 color:white;
 opacity:0;
@@ -360,7 +366,8 @@ display:block;
 }
 
 .video-card{
-width:75%;
+width:60%;
+max-width:320px;
 aspect-ratio:4/3;
 position:relative;
 overflow:hidden;
@@ -369,6 +376,36 @@ margin-bottom:40px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
+ .video-card::after{
+content:"▶";
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:46px;
+color:white;
+opacity:0;
+transition:opacity .25s ease;
+pointer-events:none;
+}
+
+.video-card::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.35);
+opacity:0;
+transition:opacity .25s ease;
+}
+
+.video-card:hover::before{
+opacity:1;
+}
+
+.video-card:hover::after{
+opacity:1;
+} 
+  
  .video-card img{
 width:100%;
 height:100%;
@@ -480,7 +517,7 @@ See the section below.
         Technical Specifications
       </div>
 
-     <div class="diy-video video-card video-thumb"
+     <div class="diy-video video-card"
      data-video="1mQpU7FMlYY">
 
      <img
@@ -489,7 +526,7 @@ See the section below.
 
 </div>
 
-     <div class="diy-video video-card video-thumb"
+     <div class="diy-video video-card"
      data-video="ZDPYtJw3wic">
 
   <img
