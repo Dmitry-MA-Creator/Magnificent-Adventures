@@ -183,6 +183,8 @@ margin:0 auto;
 .specs-block,
 .diy-text {
 padding:40px;
+border:1px solid #e5e5e5;
+background:white; 
 }
 
 .diy-video{
@@ -191,28 +193,16 @@ display:flex;
 justify-content:center;
 }
 
-.diy-video:nth-of-type(1){
+.pdp-description .diy-video:nth-child(3){
 grid-column:1;
 grid-row:2;
 }
 
-.diy-video:nth-of-type(2){
-grid-column:1;
-grid-row:3;
-} 
-
- /* позиция Assembly */
-.pdp-description .diy-video:nth-of-type(1){
-grid-column:1;
-grid-row:2;
-}
-
-/* позиция DIY */
-.pdp-description .diy-video:nth-of-type(2){
+.pdp-description .diy-video:nth-child(4){
 grid-column:1;
 grid-row:3;
 }
-  
+   
  /* лёгкие панели */
 .specs-block,
 .diy-text{
@@ -229,11 +219,6 @@ background:#fafafa;
 .specs-block {
   grid-column: 2;
   grid-row: 2;
-}
-
-.diy-video {
-  display:flex;
-  justify-content:center;
 }
 
 .diy-text {
