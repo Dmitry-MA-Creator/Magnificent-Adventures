@@ -184,6 +184,16 @@ display:flex;
 justify-content:center;
 }
 
+.diy-video:nth-of-type(1){
+grid-column:1;
+grid-row:2;
+}
+
+.diy-video:nth-of-type(2){
+grid-column:1;
+grid-row:3;
+} 
+  
  /* лёгкие панели */
 .specs-block,
 .diy-text{
@@ -366,17 +376,21 @@ display:block;
 }
 
 .video-card{
-width:60%;
-max-width:320px;
+width:52%;
+max-width:280px;
 aspect-ratio:4/3;
 position:relative;
 overflow:hidden;
 cursor:pointer;
 margin-bottom:40px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+box-shadow:0 14px 30px rgba(0,0,0,0.15);
 }
 
- .video-card::after{
+.video-card:hover{
+transform:scale(1.05);
+}
+  
+.video-card::after{
 content:"▶";
 position:absolute;
 top:50%;
@@ -406,12 +420,12 @@ opacity:1;
 opacity:1;
 } 
   
- .video-card img{
+ .pdp-description .video-card img{
 width:100%;
 height:100%;
 object-fit:cover;
 display:block;
-} 
+}
 
   
 </style>
@@ -638,7 +652,7 @@ imageOverlay.style.display = "none";
 const videoOverlay = document.getElementById("videoOverlay");
 const iframe = videoOverlay.querySelector("iframe");
 
-document.querySelectorAll(".video-thumb").forEach(function(video){
+document.querySelectorAll(".video-thumb, .video-card").forEach(function(video){
 
 video.onclick = function(){
 
