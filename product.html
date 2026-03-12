@@ -386,6 +386,7 @@ width:52%;
 max-width:280px;
 aspect-ratio:4/3;
 position:relative;
+overflow:hidden;  
 cursor:pointer;
 margin-bottom:40px;
 box-shadow:0 14px 30px rgba(0,0,0,0.15);
@@ -393,7 +394,7 @@ transition: transform .25s ease;
 }
 
 .video-card:hover{
-transform:scale(1.05);
+transform:translateY(0) scale(1.05);
 }
   
 .video-card::after{
@@ -436,7 +437,7 @@ transition:all .7s ease;
 
 .reveal.visible{
 opacity:1;
-transform:translateY(0);
+transform:translateY(0) scale(1);
 }
  
 </style>
