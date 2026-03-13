@@ -426,18 +426,7 @@ opacity:1;
 opacity:1;
 } 
  
- /* ===== Scroll reveal ===== */
 
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:all .7s ease;
-}
-
-.reveal.visible{
-opacity:1;
-transform:translateY(0) scale(1);
-}
  
 </style>
 </head>
@@ -529,7 +518,7 @@ See the section below.
     <!-- ========================= -->
     <section class="pdp-description">
 
-      <div class="description-block reveal">
+      <div class="description-block">
         <h3>Product Description</h3>
 
        <p>
@@ -538,11 +527,11 @@ See the section below.
 
      </div>
 
-      <div class="specs-block reveal">
+      <div class="specs-block">
         Technical Specifications
       </div>
 
-     <div class="diy-video video-card reveal"
+     <div class="diy-video video-card"
      data-video="1mQpU7FMlYY">
 
      <img
@@ -551,7 +540,7 @@ See the section below.
 
 </div>
 
-     <div class="diy-video video-card reveal"
+     <div class="diy-video video-card"
      data-video="ZDPYtJw3wic">
 
   <img
@@ -560,7 +549,7 @@ See the section below.
 
 </div>
       
-    <div class="diy-text reveal">
+    <div class="diy-text">
       <h3>DIY Version</h3>
 
   <p>
@@ -685,26 +674,6 @@ iframe.src = "";
 
 }
 
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll(){
-
-reveals.forEach(function(element){
-
-const windowHeight = window.innerHeight;
-const elementTop = element.getBoundingClientRect().top;
-
-if(elementTop < windowHeight - 80){
-element.classList.add("visible");
-}
-
-});
-
-}
-
-window.addEventListener("scroll", revealOnScroll);
-
-revealOnScroll();
    
 </script> 
   
