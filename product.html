@@ -270,6 +270,35 @@ grid-column: span 1;
   padding: 20px;
   margin-bottom: 30px;
 }
+  
+ /* ecosystem cards */
+.eco-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.eco-card img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:6px;
+  cursor:zoom-in;
+  transition:transform .2s;
+}
+
+.eco-card img:hover{
+  transform:scale(1.05);
+}
+
+.transformations h3,
+.parts h3{
+  text-align:left;
+}
+
+.attachments h3{
+  text-align:right;
+} 
 
 /* ----- OVERLAY ----- */
 
@@ -431,7 +460,6 @@ opacity:1;
 } 
  
 
- 
 </style>
 </head>
 
@@ -580,19 +608,42 @@ See the section below.
     <!-- ========================= -->
     <section class="pdp-ecosystem">
 
-      <div class="transformations">
-        Transformations
-      </div>
+    <div class="eco-block left">
+    <h3>Transformations</h3>
 
-      <div class="attachments">
-        Attachments
-      </div>
+    <div class="eco-grid">
+    <div class="eco-card"></div>
+    <div class="eco-card"></div>
+    <div class="eco-card"></div>
+    <div class="eco-card"></div>
+   </div>
+</div>
 
-      <div class="parts">
-        Individual Parts
-      </div>
 
-    </section>
+    <div class="eco-block right">
+    <h3>Attachments</h3>
+
+    <div class="eco-grid">
+    <div class="eco-card"></div>
+    <div class="eco-card"></div>
+    <div class="eco-card"></div>
+    <div class="eco-card"></div>
+   </div>
+</div>
+
+
+    <div class="eco-block left">
+    <h3>Individual Parts</h3>
+
+    <div class="eco-grid">
+    <div class="eco-card"></div>
+    <div class="eco-card"></div>
+    <div class="eco-card"></div>
+    <div class="eco-card"></div>
+   </div>
+</div>
+
+</section>
 
   </main>
 
