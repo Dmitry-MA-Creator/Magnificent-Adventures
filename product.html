@@ -272,15 +272,17 @@ grid-column: span 1;
  /* ecosystem cards */
 .eco-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(4, 220px);
   gap:20px;
+  justify-content:start;
 }
 
 .eco-card img{
   width:100%;
   aspect-ratio:4/3;
   object-fit:cover;
-  border-radius:6px;
+  border:1px solid #ddd;
+  border-radius:4px;
   cursor:zoom-in;
   transition:transform .2s;
 }
@@ -750,6 +752,20 @@ iframe.src = "";
 
 }
 
+ document.querySelectorAll('.eco-card img').forEach(img => {
+
+  img.addEventListener('click', function(){
+
+    const overlay = document.querySelector('.zoom-overlay');
+    const overlayImg = overlay.querySelector('img');
+
+    overlayImg.src = this.src;
+
+    overlay.style.display = 'flex';
+
+  });
+
+});
    
 </script> 
   
