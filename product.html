@@ -227,6 +227,31 @@ background:#fafafa;
   grid-row: 3;
 }
 
+ .pdp-description h3{
+font-size:20px;
+margin:10px 0;
+color:#666;
+}
+
+.pdp-description p{
+margin:5px 0;
+}
+  
+ @media (max-width: 900px){
+
+.pdp-description{
+grid-template-columns: 1fr;
+gap:40px;
+}
+  
+.description-block,
+.specs-block,
+.diy-video,
+.diy-text{
+grid-column: span 1;
+}
+
+}  
   
 /* ----- SCREEN 3 ----- */
 
@@ -303,28 +328,6 @@ border:0;
 max-width:1400px;
 margin:0 auto;
 }
-
- @media (max-width: 900px){
-
-.pdp-description{
-grid-template-columns: 1fr;
-gap:40px;
-}
-
-.pdp-description h3{
-font-size:20px;
-margin-bottom:10px;
-color:#666;
-}
-   
-.description-block,
-.specs-block,
-.diy-video,
-.diy-text{
-grid-column: span 1;
-}
-
-} 
 
 .video-thumb{
 position:relative;
