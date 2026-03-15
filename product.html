@@ -266,8 +266,46 @@ grid-column: span 1;
   border:1px solid #e5e5e5;
   padding:10px 60px;
   margin: 0 0 30px;
+  position:relative;
 }
 
+ /* ---кнопки псевдо-слайдера-- */ 
+ .eco-nav{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:34px;
+height:34px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:22px;
+color:#444;
+
+background:white;
+border-radius:50%;
+
+cursor:default;
+}
+
+.eco-nav.prev{
+left:10px;
+}
+
+.eco-nav.next{
+right:10px;
+}
+
+ .eco-nav:hover{
+border:2px solid #ec3f77;
+}
+
+.eco-nav{
+transition:all .2s ease;
+}
+  
 .eco-block:nth-child(2){
 background:#fafafa;
 }
@@ -292,7 +330,6 @@ background:#fafafa;
 
 .eco-card img:hover{
   transform:scale(1.05) translateY(-3px);
-  
 }
 
 .eco-block.left h3{
@@ -616,6 +653,9 @@ See the section below.
     <div class="eco-block left">
     <h3>Transformations</h3>
 
+    <div class="eco-nav prev">‹</div>
+    <div class="eco-nav next">›</div>
+      
     <div class="eco-grid">
     <div class="eco-card">
     <img src="images/product-main.jpg" alt=""> 
@@ -636,6 +676,9 @@ See the section below.
     <div class="eco-block right">
     <h3>Attachments</h3>
 
+    <div class="eco-nav prev">‹</div>
+    <div class="eco-nav next">›</div>
+      
     <div class="eco-grid">
     <div class="eco-card">
     <img src="images/product-side.jpg" alt=""> 
@@ -656,6 +699,9 @@ See the section below.
     <div class="eco-block left">
     <h3>Individual Parts</h3>
 
+    <div class="eco-nav prev">‹</div>
+    <div class="eco-nav next">›</div>
+      
     <div class="eco-grid">
     <div class="eco-card">
     <img src="images/product-top.jpg" alt=""> 
