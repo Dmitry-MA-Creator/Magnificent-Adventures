@@ -267,6 +267,7 @@ grid-column: span 1;
   padding:10px 60px;
   margin: 0 0 30px;
   position:relative;
+  box-shadow:0 2px 6px rgba(0,0,0,0.04);
 }
 
  /* ---кнопки псевдо-слайдера-- */ 
@@ -338,8 +339,25 @@ background:#fafafa;
   margin:5px 0 10px;
 }
 
-/* ----- OVERLAY ----- */
+.site-footer{
+text-align:center;
+padding:40px 20px 60px;
+}
 
+.prototype-note{
+font-size:12px;
+color:#666;
+max-width:700px;
+margin:0 auto 20px;
+line-height:1.5;
+}
+
+.copyright{
+font-size:14px;
+color:#888;
+} 
+  
+/* ----- OVERLAY ----- */
 .overlay {
   position: fixed;
   inset: 0;
@@ -416,8 +434,8 @@ transition:opacity .25s ease;
 .video-thumb:hover::before{
 opacity:1;
 } 
+  
 /* иконка play */
-
 .video-thumb::after{
 content:"▶";
 position:absolute;
@@ -432,14 +450,12 @@ pointer-events:none;
 }
 
 /* затемнение при наведении */
-
 .video-thumb:hover{
 background:#d0d0d0;
 transform:scale(1.02);  
 }
 
 /* появление иконки */
-
 .video-thumb:hover::after{
 opacity:1;
 }
@@ -742,9 +758,18 @@ See the section below.
 
 </div>
     
-  <footer>
-    © 2026 Magnificent Adventures
-  </footer>
+  <footer class="site-footer">
+
+<p class="prototype-note">
+* This website is a prototype of the future dynamic platform for the Magnificent Adventures project.  
+Some features are currently presented only as interface concepts and are not yet fully implemented.
+</p>
+
+<p class="copyright">
+© 2026 Magnificent Adventures
+</p>
+
+</footer>
     
 </div>
 
@@ -779,13 +804,9 @@ const videoOverlay = document.getElementById("videoOverlay");
 const iframe = videoOverlay.querySelector("iframe");
 
 document.querySelectorAll(".video-thumb, .video-card").forEach(function(video){
-
 video.onclick = function(){
-
 const videoId = this.dataset.video;
-
 iframe.src = "https://www.youtube.com/embed/" + videoId + "?rel=0";
-
 videoOverlay.style.display = "flex";
 
 }
@@ -793,19 +814,14 @@ videoOverlay.style.display = "flex";
 });
 
 videoOverlay.onclick = function(){
-
 videoOverlay.style.display = "none";
-
 iframe.src = "";
 
 }
 
  document.querySelectorAll('.eco-card img').forEach(function(img){
-
 img.onclick = function(){
-
 zoomedImage.src = this.src;
-
 imageOverlay.style.display = "flex";
 
 }
