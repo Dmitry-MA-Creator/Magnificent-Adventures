@@ -246,7 +246,7 @@ gap:20px;
 padding:20px;
 }
 
-/* сбрасываем диагональ */
+/* сброс диагонали */
 
 .description-block,
 .specs-block,
@@ -257,20 +257,27 @@ grid-row:auto;
 width:100%;
 }
 
-/* убираем центрирование видео */
+/* отключаем старые позиции */
 
-.diy-video{
-place-self:stretch;
+.pdp-description .diy-video:nth-child(3),
+.pdp-description .diy-video:nth-child(4){
+grid-column:auto;
+grid-row:auto;
 }
 
-/* растягиваем iframe */
+/* видео */
+
+.diy-video{
+display:block;
+place-self:auto;
+}
 
 .diy-video iframe{
 width:100%;
 height:auto;
 }
 
-} 
+}
   
 /* ----- SCREEN 3 ----- */
 
