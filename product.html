@@ -241,19 +241,33 @@ margin:5px 0;
 
 .pdp-description{
 grid-template-columns:1fr;
+grid-template-rows:auto;
 gap:20px;
+padding:20px;
 }
+
+/* сбрасываем диагональ */
 
 .description-block,
 .specs-block,
-.video-card,
-.diy-text{
+.diy-text,
+.diy-video{
 grid-column:auto;
 grid-row:auto;
+width:100%;
 }
 
-.video-card{
+/* убираем центрирование видео */
+
+.diy-video{
+place-self:stretch;
+}
+
+/* растягиваем iframe */
+
+.diy-video iframe{
 width:100%;
+height:auto;
 }
 
 } 
