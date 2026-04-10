@@ -141,7 +141,7 @@ background:#777;
 outline:2px solid #ec3f77;
 }
 
- @media (max-width: 900px){
+ @media (max-width: 768px){
 
 .pdp-hero{
 grid-template-columns:1fr;
@@ -237,21 +237,26 @@ color:#666;
 margin:5px 0; 
 }
   
- @media (max-width: 900px){
+@media (max-width:768px){
 
 .pdp-description{
-grid-template-columns: 1fr;
-gap:30px;
-}
-  
-.description-block,
-.specs-block,
-.diy-video,
-.diy-text{
-grid-column: span 1;
+grid-template-columns:1fr;
+gap:20px;
 }
 
-}  
+.description-block,
+.specs-block,
+.video-card,
+.diy-text{
+grid-column:auto;
+grid-row:auto;
+}
+
+.video-card{
+width:100%;
+}
+
+} 
   
 /* ----- SCREEN 3 ----- */
 
