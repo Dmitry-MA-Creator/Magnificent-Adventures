@@ -237,46 +237,50 @@ color:#666;
 margin:5px 0; 
 }
   
-@media (max-width:768px){
+@media (max-width: 768px) {
+  .pdp-description {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+  }
 
-.pdp-description{
-grid-template-columns:1fr;
-grid-template-rows:auto;
-gap:20px;
-padding:20px;
-}
+  /* сброс всех позиций */
+  .description-block,
+  .specs-block,
+  .diy-text,
+  .diy-video,
+  .pdp-description .diy-video:nth-child(3),
+  .pdp-description .diy-video:nth-child(4) {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+  }
 
-/* сброс диагонали */
+  /* задаём нужную последовательность */
+  .description-block          { order: 1; }
+  .diy-video:nth-child(3)     { order: 2; } /* Video Assembly */
+  .specs-block                { order: 3; }
+  .diy-video:nth-child(4)     { order: 4; } /* Video DIY */
+  .diy-text                   { order: 5; }
 
-.description-block,
-.specs-block,
-.diy-text,
-.diy-video{
-grid-column:auto;
-grid-row:auto;
-width:100%;
-}
+  /* исправляем видео-карточки */
+  .diy-video {
+    display: block;
+    place-self: auto;
+    width: 100%;
+    max-width: 100%;
+  }
 
-/* отключаем старые позиции */
+  .video-card {
+    width: 100%;
+    max-width: 100%;
+  }
 
-.pdp-description .diy-video:nth-child(3),
-.pdp-description .diy-video:nth-child(4){
-grid-column:auto;
-grid-row:auto;
-}
-
-/* видео */
-
-.diy-video{
-display:block;
-place-self:auto;
-}
-
-.diy-video iframe{
-width:100%;
-height:auto;
-}
-
+  .diy-video iframe {
+    width: 100%;
+    height: auto;
+  }
 }
   
 /* ----- SCREEN 3 ----- */
