@@ -170,7 +170,7 @@ position: static;
 /* ----- SCREEN 2 ----- */
 
 .pdp-description {
-  padding: 0px 60px;
+  padding:15px !important;
   box-sizing: border-box;
   border-top: 1px solid #ddd;
   display: grid;
@@ -399,10 +399,14 @@ color:#888;
   }
 
   .eco-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr !important;
     gap: 20px;
   }
 }
+
+*{
+  box-sizing:border-box;
+} 
   
 /* ----- OVERLAY ----- */
 .overlay {
