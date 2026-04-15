@@ -264,22 +264,27 @@ margin:5px 0;
   
 @media (max-width: 768px) {
   .pdp-description {
-    display:flex;
+    display:flex !important;
     flex-direction:column;
-    gap: 20px !important; 
+    gap: 20px;
     padding: 20px;
   }
 
-  /* сброс всех позиций */
+  /* ПОЛНЫЙ сброс grid-магии */
   .description-block,
   .specs-block,
   .diy-text,
-  .diy-video,
-  .pdp-description .diy-video:nth-child(3),
-  .pdp-description .diy-video:nth-child(4) {
-    grid-column: 1;
-    grid-row: auto;
+  .diy-video {
+    grid-column: auto !important;
+    grid-row: auto !important;
     width: 100%;
+  }
+
+  /* отдельно перебиваем nth-child (важно оставить!) */
+  .pdp-description .diy-video:nth-child(3),
+  .pdp-description .diy-video:nth-child(4){
+    grid-column:auto !important;
+    grid-row:auto !important;
   }
 
   .description-block,
