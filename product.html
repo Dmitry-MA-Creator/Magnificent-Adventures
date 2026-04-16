@@ -268,6 +268,8 @@ margin:5px 0;
     flex-direction:column;
     gap: 20px;
     padding: 20px;
+    grid-template-rows: none !important;
+    grid-template-columns: none !important;
   }
 
   /* ПОЛНЫЙ сброс grid-магии */
@@ -275,6 +277,8 @@ margin:5px 0;
   .specs-block,
   .diy-text,
   .diy-video {
+    min-height: auto !important;
+    height: auto !important;
     grid-column: auto !important;
     grid-row: auto !important;
     width: 100%;
@@ -309,8 +313,8 @@ margin:5px 0;
   }
 
   .video-card {
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: none !important;
     aspect-ratio:auto;
     margin:0;
     margin-bottom:0;
