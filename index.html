@@ -233,7 +233,8 @@
   z-index: 5;
  }
 
-.cta button {
+.cta-btn {
+  display: inline-block;
   background: white;
   color: #888;
   border: 2px solid #ec3f77; /* фирменный MA-розовый */
@@ -241,10 +242,11 @@
   font-size: 14px;
   border-radius: 60px;  /* больше воздуха */
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.cta button:hover {
+.cta-btn:hover {
   background: #f3f3f3;
   color: #444;
 }
@@ -371,7 +373,7 @@ border-top: 5px solid #999;
   <div class="swiper-slide">
     <img src="./images/skeleton-1-8-e-scooter-saddle-3-4.jpg" alt="MA E-Scooter 12” Saddle">
     <div class="cta">
-    <a href="product.html" class="learn-more-btn">Learn More</a>
+    <a href="product.html" class="cta-btn">Learn More</a>
   </div> 
   </div>
     <!-- Слайд 9 -->
