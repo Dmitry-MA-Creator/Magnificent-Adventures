@@ -458,27 +458,39 @@ color:#888;
 
 @media (max-width: 768px) {
   .pdp-ecosystem {
-    padding: 20px;
-  }
+  padding: 20px;
+}
 
-  .eco-block {
-    padding: 10px 20px;
-    margin:0 0 20px;
-  }
+.eco-block {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+}
 
-  .eco-block h3{
+.eco-block h3{
   font-size:15px;
   margin:6px 0 10px;
-  }
-  
-  .eco-grid {
-    grid-template-columns: 1fr;
-    gap:15px;
-    }
+}
 
-  .eco-nav{
-    display:none;
-  }
+.eco-grid { 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  justify-items: center;
+}
+
+.eco-card{
+  width: 100%;
+  max-width: 140px;
+}
+
+.eco-card img{
+  width: 100%;
+  height: auto;
+  display:block; /* ← маленький, но важный фикс */
+}
+
+.eco-nav{
+  display:none;
+}
 
 }
  
