@@ -143,7 +143,6 @@ outline:2px solid #ec3f77;
 }
 
  @media (max-width: 768px){
-
 .pdp-hero{
 grid-template-columns:1fr;
 gap:30px;
@@ -188,9 +187,7 @@ gap:10px;
 .price-note{
   font-size:12px;
 }
- .video-thumb::after{
-  font-size:16px;
-}
+
 .cta-block button{
   max-width:260px;
   width:100%;
@@ -324,11 +321,7 @@ margin:5px 0;
     margin:0 auto !important;
     margin-bottom:0;
   }
-
-  .video-card::after{
-  font-size:18px;
-}
-  
+   
   .diy-video iframe {
     width: 100%;
     aspect-ratio:16/9;
@@ -646,7 +639,23 @@ opacity:1;
 .video-card:hover::after{
 opacity:1;
 } 
- 
+
+ @media (max-width: 768px){
+  .video-thumb::after{
+    font-size:14px;
+  }
+
+  .video-card::after{
+    font-size:18px;
+  }
+
+  .video-thumb::after,
+  .video-card::after{
+    opacity:0.85;
+}
+   
+}
+  
 </style>
 </head>
 
