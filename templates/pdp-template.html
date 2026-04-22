@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MA Product</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/design-system.css">
+
+<style>
+
+/* ========================= */
+/* PRODUCT PAGE STRUCTURE   */
+/* ========================= */
+
+.product-page {
+  width: 100%;
+}
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+color:#333;
+overflow-x:hidden; 
+}
+  
+/* ----- SCREEN 1 ----- */
+
+.pdp-hero {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 150px 1fr 320px;
+  gap: 40px;
+  padding: 25px 60px 25px 60px;
+  box-sizing: border-box;
+}
+
+ .main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  cursor: zoom-in;
+  transition:transform .3s ease;
+}
+
+ .main-image:hover img{
+transform:scale(1.08);
+}
+  
+ .main-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.thumb {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  cursor: pointer;
+  border:1px solid #ddd;
+  transition:all 0.2s ease;
+}
+.thumb.active{
+  border:2px solid #000;
+}
+
+.media-column .video-thumb img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+  
+.media-column,
+.main-image,  
+.info-column {
+  border: none;
+  padding: 15px;
+
+}
+ 
+.main-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.media-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+  .info-column{
+display:flex;
+flex-direction:column;
+gap:25px;
+position:sticky;
+top:60px;
+height:fit-content;    
+}
+
+ .product-title{
+font-size:28px;
+font-weight:600;
+color:#ec3f77;  
+}
+
+.product-tagline{
+font-size:16px;
+color:#999;
+}
+
+.price-block{
+font-size:30px;
+font-weight:700;
+color:#333;
+}
+
+.price-note{
+font-size:14px;
+color:#666;
+line-height:1.5;
+}
+  
+.cta-block button{
+width:100%;
+padding:14px;
+font-size:16px;
+background:#999;
+color:white;
+border-radius:16px;   
+border:none;
+cursor:pointer;
+transition:all 0.2s ease;
+}
+
+.cta-block button:hover{
+background:#777;
+}
+  
+.cta-block button:focus{
+outline:2px solid #ec3f77;
+}
+
+ @media (max-width: 768px){
+.pdp-hero{
+grid-template-columns:1fr;
+gap:30px;
+padding: 20px; /* ← было 25px 60px, стало равномерно 20px */  
+}
+
+.media-column{
+flex-direction:row;
+justify-content:center;
+flex-wrap:wrap;   /* 🔥 КЛЮЧ */
+gap:10px;         /* уменьшаем расстояние */  
+width:100%;
+}
+
+.thumb{
+width:48%;
+max-width:70px;
+height:auto;
+}
+
+.info-column{
+position: static;
+width: 100%; /* ← занимает всю ширину родителя */ 
+max-width: 100%; /* ← снимаем ограничение 500px */ 
+margin: 0; 
+box-sizing: border-box;
+gap:10px;
+}
+
+.product-title{
+  font-size:18px;
+}
+
+.product-tagline{
+  font-size:14px;
+}
+
+.price-block{
+  font-size:22px;
+}
+
+.price-note{
+  font-size:12px;
+}
+
+.cta-block button{
+  max-width:160px;
+  width:100%;
+  margin:0 auto;
+  display:block;
+}
+   
+} 
+  
+/* ----- SCREEN 2 ----- */
+
+.pdp-description {
+  padding:15px !important;
+  box-sizing: border-box;
+  border-top: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px;
+} 
+
+.description-block,
+.specs-block,
+.diy-text {
+padding: 0px 15px 15px 15px;
+border:1px solid #eee;
+background:white; 
+}
+
+.diy-video{
+padding:0;
+display:flex;
+justify-content:center;
+align-items:center;
+place-self:center; 
+}
+
+.pdp-description .diy-video:nth-child(3){
+grid-column:1;
+grid-row:2;
+}
+
+.pdp-description .diy-video:nth-child(4){
+grid-column:1;
+grid-row:3;
+}
+   
+ /* лёгкая панель */
+.specs-block{
+background:#fafafa;
+} 
+  
+  /* Диагональ */
+.description-block {
+  grid-column: 1;
+  grid-row: 1;
+  border-top:3px solid #ec3f77; 
+}
+
+.specs-block {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.diy-text {
+  grid-column: 2;
+  grid-row: 3;
+  border-bottom:3px solid #ec3f77;
+}
+
+ .pdp-description h3{
+font-size:20px;
+margin:10px 0;
+color:#666;
+}
+
+.pdp-description p{
+margin:5px 0; 
+}
+  
+@media (max-width: 768px) {
+  .pdp-description {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* ПОЛНЫЙ сброс grid-магии */
+  .description-block,
+  .specs-block,
+  .diy-text,
+  .diy-video {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+  }
+
+  /* отдельно перебиваем nth-child (важно оставить!) */
+  .pdp-description .diy-video:nth-child(3),
+  .pdp-description .diy-video:nth-child(4){
+    grid-column:auto;
+    grid-row:auto;
+  }
+
+  .description-block,
+  .specs-block,
+  .diy-text{
+  width:100%;
+}
+
+  /* задаём нужную последовательность */
+  .description-block          { order: 1; }
+  .diy-video:nth-child(3)     { order: 2; } /* Video Assembly */
+  .specs-block                { order: 3; }
+  .diy-video:nth-child(4)     { order: 4; } /* Video DIY */
+  .diy-text                   { order: 5; }
+
+  /* исправляем видео-карточки */
+  .diy-video {
+    display: block;
+    width: 100%;
+    margin: 0 auto;   
+  }
+
+  .video-card {
+    width: 100% !important;
+    max-width: 100px !important;
+    aspect-ratio:auto !important;
+    margin:0 auto !important;
+    margin-bottom:0;
+  }
+   
+  .diy-video iframe {
+    width: 100%;
+    aspect-ratio:16/9;
+    height: auto;
+    display:block;
+  }
+
+.pdp-description h3{
+  font-size:14px;
+  margin:5px 0;
+  line-height:1.2;
+}
+
+.pdp-description p{
+  font-size:13px;
+  margin:4px 0;
+  line-height:1.3;
+}
+
+.diy-text,
+.specs-block,
+.description-block{
+font-size:12px;
+padding:10px 14px; 
+}
+
+}
+  
+/* ----- SCREEN 3 ----- */
+
+.pdp-ecosystem {
+  min-height: 50vh;
+  padding: 30px 60px;
+  box-sizing: border-box;
+  border-top: none;
+}
+
+.eco-block{
+  border: none;
+  padding:10px 60px;
+  margin: 0 0 30px;
+  position:relative;
+  
+}
+
+ /* ---кнопки псевдо-слайдера-- */ 
+ .eco-nav{
+position:absolute;
+top:55%;
+transform:translateY(-50%);
+width:34px;
+height:34px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+color:#666;
+background:white;
+border-radius:50%;
+
+border:2px solid transparent;
+transition:border-color .2s ease;  
+}
+
+.eco-nav.prev{
+left:45px;
+}
+
+.eco-nav.next{
+right:45px;
+}
+
+ .eco-nav:hover{
+border-color:#ec3f77;  
+}
+
+.eco-nav{
+transition:all .2s ease;
+}
+  
+.eco-block:nth-child(2){
+background:#fafafa;
+}
+  
+ /* ecosystem cards */
+.eco-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 170px);
+  gap:70px;
+  justify-content:center;
+}
+
+.eco-card img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border:1px solid #ddd;
+  border-radius:4px;
+  cursor:zoom-in;
+  transition:transform .2s;
+}
+
+.eco-card img:hover{
+  transform:scale(1.05) translateY(-3px);
+}
+
+.eco-block.left h3{
+  text-align:left;
+  margin:5px 0 10px;
+}
+
+.eco-block.right h3{
+  text-align:right;
+  margin:5px 0 10px;
+}
+
+.site-footer{
+text-align:center;
+padding:40px 20px 60px;
+}
+
+.prototype-note{
+font-size:12px;
+color:#666;
+max-width:700px;
+margin:0 auto 20px;
+line-height:1.5;
+}
+
+.copyright{
+font-size:14px;
+color:#888;
+} 
+ 
+@media (max-width: 768px) {
+  .pdp-ecosystem {
+  padding: 20px;
+}
+
+.eco-block {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+}
+
+.eco-block h3{
+  font-size:15px;
+  margin:6px 0 10px;
+}
+
+.eco-grid { 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  justify-items: center;
+}
+
+.eco-card{
+  width: 100%;
+  max-width: 140px;
+}
+
+.eco-card img{
+  width: 100%;
+  height: auto;
+  display:block; /* ← маленький, но важный фикс */
+}
+
+.eco-nav{
+  display:none;
+}
+
+}
+
+ @media (min-width: 400px) and (max-width: 768px) {
+  .eco-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+  .eco-card {
+    max-width: 100%;
+  }
+
+ /* включаем кнопки */
+  .eco-nav {
+    display: flex;
+  }
+  
+  /* расстояние разлёта — меняй эти цифры */
+  .eco-nav.prev { left: -15px; }
+  .eco-nav.next { right: -15px; }
+  }
+   
+*{
+  box-sizing:border-box;
+} 
+  
+/* ----- OVERLAY ----- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+}
+
+.overlay-content {
+  position: absolute;
+  inset: 10%;
+  background: white;
+}
+
+.image-overlay{
+  position:fixed;
+ inset:0;
+ background:rgba(0,0,0,0.75);
+ display:none;
+ align-items:center;
+ justify-content:center;
+ z-index:1000;
+ cursor:zoom-out;
+ transition:opacity .25s ease;
+}
+
+.image-overlay img{
+ max-width:90%;
+ max-height:90%;
+ object-fit:contain;
+}
+
+.video-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.85);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:1100;
+}
+
+.video-container{
+width:80%;
+max-width:900px;
+aspect-ratio:16/9;
+}
+
+.video-container iframe{
+width:100%;
+height:100%;
+border:0;
+} 
+.pdp-container{
+max-width:1400px;
+margin:0 auto;
+}
+
+.video-thumb{
+position:relative;
+cursor:pointer;
+overflow:hidden;
+transition:transform .25s ease;
+}
+
+.video-thumb::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.35);
+opacity:0;
+transition:opacity .25s ease;
+}
+
+.video-thumb:hover::before{
+opacity:1;
+} 
+  
+/* иконка play */
+.video-thumb::after{
+content:"▶";
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:42px;
+color:white;
+opacity:0;
+transition:opacity .25s ease;
+pointer-events:none;
+}
+
+/* затемнение при наведении */
+.video-thumb:hover{
+background:#d0d0d0;
+transform:scale(1.02);  
+}
+
+/* появление иконки */
+.video-thumb:hover::after{
+opacity:1;
+}
+
+.pdp-description .video-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+.video-card{
+width:30%;
+max-width:280px;
+aspect-ratio:4/3;
+position:relative;
+cursor:pointer;
+margin-bottom:40px;
+transition: transform .25s ease; box-shadow .25s ease;
+}
+
+.video-card:hover{
+transform:scale(1.05);
+}
+  
+.video-card::after{
+content:"▶";
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:46px;
+color:white;
+opacity:0;
+transition:opacity .25s ease;
+pointer-events:none;
+}
+
+.video-card::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.35);
+opacity:0;
+transition:opacity .25s ease;
+}
+
+.video-card:hover::before{
+opacity:1;
+}
+
+.video-card:hover::after{
+opacity:1;
+} 
+
+ @media (max-width: 768px){
+  .video-thumb::after{
+    font-size:16px;
+  }
+
+  .video-card::after{
+    font-size:20px;
+  }
+   
+}
+  
+</style>
+</head>
+
+<body>
+
+  <div class="pdp-container">
+    
+  <!-- NAV можно скопировать из index -->
+  <header class="nav">
+    <div class="logo">MA Constructs</div>
+  </header>
+
+  <main class="product-page">
+
+    <!-- ========================= -->
+    <!-- SCREEN 1 -->
+    <!-- ========================= -->
+   <section class="pdp-hero">
+
+  
+    <div class="media-column">
+
+      <img class="thumb active"
+           src="images/product-main.jpg"
+           onclick="changeImage(this)">
+
+      <img class="thumb"
+           src="images/product-side.jpg"
+           onclick="changeImage(this)">
+
+      <img class="thumb"
+           src="images/product-top.jpg"
+           onclick="changeImage(this)">
+
+      <div class="thumb video-thumb"
+      data-video="0rSk-MF2k5M">
+
+      <img
+      src="images/video-preview.jpg"
+      alt="Product video">
+
+</div>
+
+    </div>
+
+    <div class="main-image">
+
+      <img id="mainProductImage"
+           src="images/product-main.jpg"
+           alt="MA Product">
+
+    </div>
+
+  
+  <div class="info-column">
+
+  <div class="product-title">
+    {{title}}
+  </div>
+
+  <div class="product-tagline">
+    Modular mobility system
+  </div>
+
+  <div class="price-block">
+    $30
+  </div>
+
+  <div class="price-note">
+Platform price is calculated as
+1500 / 50 units = $30.
+
+DIY version can be built almost for free.
+See the section below.
+</div>
+    
+  <div class="cta-block">
+    <button>Make Order</button>
+  </div>
+
+</div>
+
+</section>
+
+
+    <!-- ========================= -->
+    <!-- SCREEN 2 -->
+    <!-- ========================= -->
+    <section class="pdp-description">
+
+      <div class="description-block">
+        <h3>Product Description</h3>
+
+       <p>
+       Modular mobility platform designed for compact personal transport.
+       </p>
+
+     </div>
+
+      <div class="specs-block">
+        Technical Specifications
+      </div>
+
+     <div class="diy-video video-card"
+     data-video="1mQpU7FMlYY">
+
+     <img
+     src="images/video-assembly-preview.jpg"
+     alt="Assembly video">
+
+</div>
+
+     <div class="diy-video video-card"
+     data-video="ZDPYtJw3wic">
+
+  <img
+  src="images/video-diy-preview.jpg"
+  alt="DIY video">
+
+</div>
+      
+    <div class="diy-text">
+      <h3>DIY Version</h3>
+
+  <p>
+    Ты можешь собрать это изделие самостоятельно из доступных материалов.
+    Это займёт больше времени, но позволит тебе сэкономить и получить
+    настоящее удовольствие от процесса.
+  </p>
+
+  <p>
+    Распечатай чертежи, аккуратно склей листы A4 и используй их как
+    точную разметку для сверления и резки.
+  </p>
+
+  <a href="#" class="download-link">
+    Download Drawings (PDF)
+  </a>
+</div> 
+      
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- SCREEN 3 -->
+    <!-- ========================= -->
+    <section class="pdp-ecosystem">
+
+    <div class="eco-block left">
+    <h3>Transformations</h3>
+
+    <div class="eco-nav prev">‹</div>
+    <div class="eco-nav next">›</div>
+      
+    <div class="eco-grid">
+    <div class="eco-card">
+    <img src="images/product-main.jpg" alt=""> 
+    </div>
+    <div class="eco-card">
+    <img src="images/product-main.jpg" alt="">  
+    </div>
+    <div class="eco-card">
+    <img src="images/product-main.jpg" alt="">  
+    </div>
+    <div class="eco-card">
+    <img src="images/product-main.jpg" alt="">  
+    </div>
+   </div>
+</div>
+
+
+    <div class="eco-block right">
+    <h3>Attachments</h3>
+
+    <div class="eco-nav prev">‹</div>
+    <div class="eco-nav next">›</div>
+      
+    <div class="eco-grid">
+    <div class="eco-card">
+    <img src="images/product-side.jpg" alt=""> 
+    </div>
+    <div class="eco-card">
+    <img src="images/product-side.jpg" alt="">  
+    </div>
+    <div class="eco-card">
+    <img src="images/product-side.jpg" alt=""> 
+    </div>
+    <div class="eco-card">
+    <img src="images/product-side.jpg" alt="">  
+    </div>
+   </div>
+</div>
+
+
+    <div class="eco-block left">
+    <h3>Individual Parts</h3>
+
+    <div class="eco-nav prev">‹</div>
+    <div class="eco-nav next">›</div>
+      
+    <div class="eco-grid">
+    <div class="eco-card">
+    <img src="images/product-top.jpg" alt=""> 
+    </div>
+    <div class="eco-card">
+    <img src="images/product-top.jpg" alt="">  
+    </div>
+    <div class="eco-card">
+    <img src="images/product-top.jpg" alt="">  
+    </div>
+    <div class="eco-card">
+    <img src="images/product-top.jpg" alt="">  
+    </div>
+   </div>
+</div>
+
+</section>
+
+  </main>
+
+
+  <!-- Overlay для модальных окон -->
+<div class="overlay">
+  <div class="overlay-content"></div>
+</div>
+
+<!-- Overlay для zoom изображения -->
+<div class="image-overlay" id="imageOverlay">
+  <img id="zoomedImage" src="" alt="Zoomed product image">
+</div>
+
+<div class="video-overlay" id="videoOverlay">
+
+  <div class="video-container">
+
+    <iframe
+      src="https://www.youtube.com/embed/0rSk-MF2k5M?rel=0"
+      allowfullscreen>
+    </iframe>
+            
+  </div>
+
+</div>
+    
+  <footer class="site-footer">
+
+<p class="prototype-note">
+* This website is a prototype of the future dynamic platform for the Magnificent Adventures project.  
+Some features are currently presented only as interface concepts and are not yet fully implemented.
+</p>
+
+<p class="copyright">
+© 2026 Magnificent Adventures
+</p>
+
+</footer>
+    
+</div>
+
+ <script>
+
+function changeImage(element){
+
+document.getElementById("mainProductImage").src = element.src;
+
+document.querySelectorAll(".thumb").forEach(
+thumb => thumb.classList.remove("active")
+);
+
+element.classList.add("active");
+
+}
+
+const mainImage = document.getElementById("mainProductImage");
+const imageOverlay = document.getElementById("imageOverlay");
+const zoomedImage = document.getElementById("zoomedImage");
+
+mainImage.onclick = function(){
+zoomedImage.src = mainImage.src;
+imageOverlay.style.display = "flex";
+}
+
+imageOverlay.onclick = function(){
+imageOverlay.style.display = "none";
+}
+
+const videoOverlay = document.getElementById("videoOverlay");
+const iframe = videoOverlay.querySelector("iframe");
+
+document.querySelectorAll(".video-thumb, .video-card").forEach(function(video){
+video.onclick = function(){
+const videoId = this.dataset.video;
+iframe.src = "https://www.youtube.com/embed/" + videoId + "?rel=0";
+videoOverlay.style.display = "flex";
+
+}
+
+});
+
+videoOverlay.onclick = function(){
+videoOverlay.style.display = "none";
+iframe.src = "";
+
+}
+
+ document.querySelectorAll('.eco-card img').forEach(function(img){
+img.onclick = function(){
+zoomedImage.src = this.src;
+imageOverlay.style.display = "flex";
+
+}
+
+});
+   
+</script> 
+  
+</body>
+</html>
